@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Prediction Result</h1>
+        <p class="mt-4">Predicted stock price for <strong>{{ ticker }}</strong> on <strong>{{ date }}</strong>: <strong>{{ predicted_price }}</strong></p>
+        <p>Mean Prediction: <strong>{{ mean_pred }}</strong></p>
+        <p>Standard Deviation: <strong>{{ std_dev }}</strong></p>
+        <p>Confidence Interval: <strong>[{{ lower_bound }}, {{ upper_bound }}]</strong></p>
+        <p>Model Training Mean Absolute Error: <strong>{{ train_mae }}</strong></p>
+        <p>Model Validation Mean Absolute Error: <strong>{{ val_mae }}</strong></p>
+        <div>{{ plot_html | safe }}</div>
+        <a href="{{ url_for('date_selection', ticker=ticker, train_mae=train_mae, val_mae=val_mae) }}" class="btn btn-primary mt-3">Select Another Date</a>
+        <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</body>
+</html>
