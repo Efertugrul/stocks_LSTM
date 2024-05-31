@@ -28,5 +28,5 @@ This project is a web application that predicts stock prices using Long Short-Te
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/stock-price-predictor.git
-   cd stock-price-predictor
+   git clone https://github.com/Efertugrul/stocks_LSTM.git
+   cd stocks_LSTM
